@@ -11,11 +11,11 @@ Cela influe directement sur notre travail de restitution qui se doit de partager
 Nous avons identifié plusieurs types de tâches en rapport avec notre user target. Le clustering, le tri, la corrélation, l’association et la comparaison. Ces tâches permettent de trouver un objectif à nos visualisations et dirigent nos décisions en ce qui concerne les types de visualisations à choisir ainsi que les interactions qui y seront proposées.
 
 
-## BubbleMap
+# BubbleMap
 
 
 
-## ScatterPlot 
+# ScatterPlot 
 
 Pour répondre aux tâches de clustering, de comparaison et de tri, le scatter plot est un moyen de visualisation que nous avons jugé optimal. Il possède une lecture accessible et permet l’ajout d’interactions qui répondent à nos tâches.
 Les données utilisées pour alimenter ce graphique sont les suivantes : 
