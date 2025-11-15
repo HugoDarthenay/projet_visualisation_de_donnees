@@ -1,11 +1,40 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Visualisation de données</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Carte à bulles mondiale</title>
+  <link rel="stylesheet" href="css/bubblemap.css">
 </head>
 <body>
-    <p>test 2</p>
+  <h1>Carte à bulles mondiale — Sélectionnez une ville pour voir la répartition des usages</h1>
+  
+  <div class="container">
+    <div class="chart-card">
+      <svg id="map" viewBox="0 0 860 560"></svg>
+      <div class="muted small">
+        Bulles : taille = nombre d'élèves dans la ville. Couleur : moyenne des résultats scolaires.
+      </div>
+      <div id="loading" class="loading">Chargement des données...</div>
+    </div>
+
+    <div class="chart-card">
+      <div style="display:flex; align-items:center; justify-content:space-between;">
+        <strong id="pieTitle">Diagramme circulaire — Sélectionnez une ville</strong>
+        <button id="resetBtn">Réinitialiser</button>
+      </div>
+      <svg id="pieChart"></svg>
+      <div id="pieLegend" class="legend"></div>
+    </div>
+  </div>
+
+  <div id="tooltip" class="tooltip" style="display:none"></div>
+
+  <!-- Librairies -->
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+  <script src="https://unpkg.com/topojson-client@3"></script>
+
+  <!-- Ton script principal -->
+  <script type="module" src="scripts/bubblemap.js"></script>
 </body>
 </html>
