@@ -10,6 +10,17 @@ async function main() {
   // === Initialisation ===
   const geoService = new GeoService();
 
+  let colorMode = "performance"; // Mode de coloration des bulles initiale
+
+  //Liste des couleurs pour les différents usages
+  const USAGE_COULEURS = {
+    "Education": "#6282ee",
+    "Social Media": "#ff7f50",
+    "Gaming": "#ffa600",
+    "Browsing": "#2a9d8f",
+    "Other": "#999999"
+  };
+
   const svg = d3.select('#map');
   const width = 860, height = 560;
   const projection = d3.geoMercator().scale(135).translate([width / 2, height / 2]);
@@ -75,6 +86,7 @@ async function main() {
     city.count = city.samples.length; // nombre d'échantillons
     city.avgPerformance = d3.mean(city.samples, d => d.Academic_Performance); // moyenne des performances académiques
     city.purposes = d3.rollup(city.samples, vv => vv.length, d => d.Phone_Usage_Purpose); // répartition des usages
+    city.avgSleep = d3.mean(city.samples, d => d.Sleep_Hours); //Temps de sommeil moyen
   }
 
   d3.select('#loading').text('');
@@ -120,7 +132,15 @@ async function main() {
 
   node.append('circle') //Ajout des cercles correspondant aux villes
     .attr('r', d => rayon(d.count))
-    .attr('fill', d => echelleCouleur(d.avgPerformance))
+    .attr('fill', d => { 
+      const purposes = Array.from(d.purposes);
+      if (colorMode === "performance") {
+        return echelleCouleur(d.avgPerformance);
+      }
+      if (!purposes.length) return "#ccc";
+      const [topUsage] = purposes.sort((a, b) => b[1] - a[1])[0];
+      return USAGE_COULEURS[topUsage] ?? "#ccc";
+    })
     .attr('stroke', '#333')
     .attr('stroke-width', 1)
     .attr('opacity', 0.95);
@@ -131,6 +151,30 @@ async function main() {
     .style('font-size', '10px')
     .style('pointer-events', 'none')
     .text(d => d.Location.split(' ')[0]);
+  
+  //Ecoute du changement du radio button pour changer le mode de couleur
+  d3.selectAll('input[name="colorMode"]').on('change', () => {
+    colorMode = document.querySelector('input[name="colorMode"]:checked').value;
+    updateBubbleColors();
+  });
+
+  //Fonction de mise à jour des couleurs des bulles
+  function updateBubbleColors() {
+    node.select('circle')
+      .transition().duration(250)
+      .attr('fill', d => {
+        if (colorMode === "performance") {
+          return echelleCouleur(d.avgPerformance);
+        }
+
+        // mode usage : trouver l'usage dominant
+        const purposes = Array.from(d.purposes);
+        if (!purposes.length) return "#ccc";
+
+        const [topUsage] = purposes.sort((a, b) => b[1] - a[1])[0];
+        return USAGE_COULEURS[topUsage] ?? "#ccc";
+      });
+  }
 
   // === Piechart ===
   const pieW = 360, pieH = 360, pieR = Math.min(pieW, pieH) / 2 - 20;
@@ -148,14 +192,6 @@ async function main() {
     d3.select('#pieTitle').text(`Usages — ${city.Location}`);
   }
 
-  //Bouton de réinitialisation
-  d3.select('#resetBtn').on('click', () => {
-    d3.select('#pieTitle').text('Diagramme circulaire — Sélectionnez une ville');
-    pies.selectAll('*').remove();
-    d3.select('#pieLegend').html('');
-    bulles.selectAll('circle').attr('stroke-width', 1);
-  });
-
   //Fonction de mise à jour du camembert
   function updatePie(city) {
     const purposes = Array.from(city.purposes).map(([k, v]) => [k, v]);
@@ -167,12 +203,9 @@ async function main() {
     }
 
     // Mise à jours des couleurs
-    const baseColor = d3.color("#6282ee");//Couleur pour les résultat maximum
-    const purposeColor = d3.scaleOrdinal()
+    const usageCouleurs = d3.scaleOrdinal()
       .domain(purposes.map(d => d[0]))
-      .range(purposes.map((_, i) =>
-        d3.interpolateRgb(baseColor, d3.color("#e63946"))(i / (purposes.length - 1)) //Couleur pour les résultat minimum
-      ));
+      .range(purposes.map(([k]) => USAGE_COULEURS[k] ?? "#cccccc"));
 
     // Mise à jour des proportions des activités
     const arcs = pies.selectAll('path').data(pie(purposes));
@@ -181,7 +214,7 @@ async function main() {
         .attr('d', arc)
         .attr('stroke', '#fff')
         .attr('stroke-width', 1)
-        .attr('fill', d => purposeColor(d.data[0]))
+        .attr('fill', d => usageCouleurs(d.data[0]))
         .each(function (d) { this._current = d; })
         .on('mouseover', (event, d) =>
           tooltip.style('display', 'block').html(
@@ -201,10 +234,21 @@ async function main() {
     );
 
     // Mise à jour de la légende
-    const legend = d3.select('#pieLegend'); legend.html('');
+    const legend = d3.select('#pieLegend');
+    legend.html('');
+
+    // Informations essentiel de la bulle
+    legend.append('div')
+      .attr('class', 'legend-info-moyenne')
+      .html(`<strong>Moyenne académique :</strong> ${city.avgPerformance.toFixed(1)}`);
+
+    legend.append('div')
+      .attr('class', 'legend-info-sleep')
+      .html(`<strong>Sommeil moyen :</strong> ${city.avgSleep?.toFixed(1) || "N/A"} h`);
+
     purposes.forEach(p => {
       const div = legend.append('div').attr('class', 'legend-item');
-      div.append('div').attr('class', 'legend-swatch').style('background', purposeColor(p[0]));
+      div.append('div').attr('class', 'legend-swatch').style('background', usageCouleurs(p[0]));
       div.append('div').text(`${p[0]} — ${p[1]} (${(p[1] / total * 100).toFixed(1)}%)`);
     });
   }

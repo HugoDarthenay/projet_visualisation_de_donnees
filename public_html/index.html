@@ -16,12 +16,15 @@
         Bulles : taille = nombre d'élèves dans la ville. Couleur : moyenne des résultats scolaires.
       </div>
       <div id="loading" class="loading">Chargement des données...</div>
+      <div id="colorModeContainer">
+        <label><input type="radio" name="colorMode" value="performance" checked> Couleur par performance</label>
+        <label><input type="radio" name="colorMode" value="usage"> Couleur par usage dominant</label>
+      </div>
     </div>
 
     <div class="chart-card">
       <div style="display:flex; align-items:center; justify-content:space-between;">
         <strong id="pieTitle">Diagramme circulaire — Sélectionnez une ville</strong>
-        <button id="resetBtn">Réinitialiser</button>
       </div>
       <svg id="pieChart"></svg>
       <div id="pieLegend" class="legend"></div>

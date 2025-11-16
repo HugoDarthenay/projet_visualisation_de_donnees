@@ -10,13 +10,17 @@ h1 {
   margin-bottom: 12px;
 }
 
+input[type="radio"] {
+  accent-color: black;
+}
+
 .container {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: flex-start;
   gap: 20px;
-  flex-wrap: nowrap; /* empêche le passage à la ligne */
+  flex-wrap: nowrap;
 }
 
 .chart-card {
@@ -27,7 +31,6 @@ h1 {
   height: fit-content;
 }
 
-/* --- Carte : 70% --- */
 .chart-card.map {
   flex: 0 0 70%;
   max-width: 70%;
@@ -38,11 +41,14 @@ circle{
   border-style: none;
 }
 
+circle:hover {
+  transform: scale(1.5);
+}
+
 text{
   font-weight: bold;
 }
 
-/* --- Camembert : 30% --- */
 .chart-card.pie {
   flex: 0 0 30%;
   max-width: 30%;
@@ -79,6 +85,10 @@ text{
   display: flex;
   gap: 8px;
   align-items: center;
+}
+
+.legend-info-sleep{
+  margin-bottom: 10px;
 }
 
 .legend-swatch {
