@@ -109,7 +109,7 @@ async function main() {
     .style('cursor', 'pointer')
     .on('mouseover', (event, d) =>
       tooltip.style('display', 'block').html(
-        `<strong>${d.Location}</strong><br/>Élèves : ${d.count}<br/>Moyenne : ${d.avgPerformance.toFixed(1)}<br/><em>${d.display_name}</em>`
+        `<strong>${d.Location}</strong><br/>Élèves : ${d.count}<br/>Moyenne : ${d.avgPerformance.toFixed(1)}<br/>`
       )
     )
     .on('mousemove', (event) =>
