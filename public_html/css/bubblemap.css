@@ -1,0 +1,199 @@
+body { 
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 12px;
+  background: #fafafa;
+  color: #222;
+}
+
+h1 {
+  font-size: 18px;
+  margin-bottom: 12px;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 20px;
+  flex-wrap: nowrap;
+}
+
+.chart-card {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+  padding: 12px;
+  height: fit-content;
+}
+
+.chart-card.map {
+  flex: 0 0 70%;
+  max-width: 70%;
+}
+
+circle {
+  opacity: 0.6;
+  border-style: none;
+  transition: transform 0.25s ease-out; /* ← effet progressif */
+}
+
+circle:hover {
+  transform: scale(1.5);
+}
+
+text{
+  font-weight: bold;
+}
+
+.chart-card.pie {
+  flex: 0 0 30%;
+  max-width: 30%;
+}
+
+.map-container {
+  position: relative;
+}
+
+#map {
+  width: 100%;
+  height: 560px;
+}
+
+/* --- Légende du dégradé de performance --- */
+.performance-legend {
+  position: absolute;
+  bottom: 10px;
+  left: 5px;
+  padding: 8px 12px;
+  background: white;
+  border-radius: 6px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+  font-size: 12px;
+}
+
+.gradient-bar {
+  width: 140px;
+  height: 14px;
+  background: linear-gradient(to right, #e63946, #6282ee);
+  border-radius: 5px;
+  margin-bottom: 6px;
+}
+
+.gradient-labels {
+  display: flex;
+  justify-content: space-between;
+  font-size: 11px;
+}
+
+.label-radio {
+  display: block;
+}
+
+.radio-container {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    cursor: pointer;
+    margin: 3px 0;
+}
+
+.radio-container input[type="radio"] {
+    display: none;
+}
+
+.radio-custom {
+    width: 15px; 
+    height: 15px;
+    border: 2px solid #000;
+    border-radius: 50%;
+    display: inline-block;
+    position: relative;
+    background-color: transparent;
+}
+
+.radio-container input[type="radio"]:checked + .radio-custom {
+    background-color: #1e90ff;
+    border-color: #1e90ff;
+}
+
+.radio-container input[type="radio"]:checked + .radio-custom::after {
+    content: "";
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #1e90ff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#pieChart {
+  width: 100%;
+  height: 360px;
+}
+
+.tooltip {
+  position: absolute;
+  pointer-events: none;
+  background: rgba(0,0,0,0.75);
+  color: white;
+  padding: 6px 8px;
+  border-radius: 4px;
+  font-size: 13px;
+}
+
+.legend {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-top: 8px;
+}
+
+.legend-item {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.legend-info-sleep{
+  margin-bottom: 10px;
+}
+
+.legend-swatch {
+  width: 18px;
+  height: 18px;
+  border-radius: 3px;
+}
+
+.muted {
+  color: #666;
+  font-size: 13px;
+  margin-top: 10px
+}
+
+.small {
+  font-size: 12px;
+}
+
+button {
+  margin-top: 8px;
+  padding: 6px 10px;
+  border: none;
+  border-radius: 4px;
+  background-color: #e0e0e0;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+button:hover {
+  background-color: #d5d5d5;
+}
+
+.loading {
+  color: #666;
+  font-size: 13px;
+  margin-top: 6px;
+}
+
