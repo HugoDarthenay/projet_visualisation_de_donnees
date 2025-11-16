@@ -11,7 +11,8 @@
   
   <div class="container">
     <div class="chart-card">
-      <svg id="map" viewBox="0 0 860 560"></svg>
+      <div class="map-container">
+        <svg id="map" viewBox="0 0 860 560"></svg>
 
       <div class="performance-legend">
           <div><strong>Performance</strong></div>
@@ -26,7 +27,8 @@
               <span>78</span>
           </div>
       </div>
-
+      </div>
+      
       <div class="muted small">
         Bulles : taille = nombre d'élèves dans la ville. Couleur : moyenne des résultats scolaires.
       </div>
@@ -62,6 +64,6 @@
   <script src="https://unpkg.com/topojson-client@3"></script>
 
   <!-- Ton script principal -->
-  <script type="module" src="scripts/bubblemap.js"></script>
+  <script type="module" src="js/bubblemap.js"></script>
 </body>
 </html>
