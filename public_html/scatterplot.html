@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scatter Plot</title>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <link rel="stylesheet" href="./css/scatterPlot.css">
+</head>
+<body>
+    <h1>Scatter plot</h1>
+    
+    <div class="filtres">
+        <div class="selections">
+            <label for="grade_select">Filtre par niveau d'études :</label>
+            <select class="grade_select">
+                <option value="all">Tous les niveaux</option>
+            </select>
+            <label for="purpose_select">Filtre par activité principale :</label>
+            <select class="purpose_select">
+                <option value="all">Toutes les activités</option>
+            </select>
+        </div>
+        <div class="stats">
+            <strong>Moyenne performance :</strong>
+            <span id="avg-performance">—</span>
+            <strong>Activité la plus représentée :</strong>
+            <span id="avg-activity">—</span>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="legends-container">
+            <div class="legend" id="legende_nb_heures">
+                <h3>Nombre d'heures totales</h3>
+                <p>Taille des cercles représentant le temps d'utilisation total quotidien</p>
+                <div id="cercle_nb_heures"></div>
+            </div>
+            
+            <div class="legend" id="legende_niveau_anxiete">
+                <h3>Niveau d'anxiété</h3>
+                <p>Taille des cercles blancs intérieurs représentant le niveau d'anxiété</p>
+                <div id="cercle_niveau_anxiete"></div>
+            </div>
+        </div>
+        
+        <div id="visualisation">
+            <div id="infoBulle" class="tooltip"></div>
+        </div>
+    </div>
+    
+    <script src="./js/scatterplot.js"></script>
+</body>
+</html>
