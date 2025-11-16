@@ -1,4 +1,4 @@
-// script.js - corrected: age filter reinstated, purpose filter, brushes fixed, colors fixed, axis labels shown
+// pcp.js - corrected: age filter reinstated, purpose filter, brushes fixed, colors fixed, axis labels shown
 const CSV_FILE = "data/data.csv";
 
 // dims used in axes (Age intentionally excluded from axes but still filterable)
