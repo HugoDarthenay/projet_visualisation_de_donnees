@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Parallel Coordinates — Teen Phone Addiction</title>
+    <link rel="stylesheet" href="../../../../../../../projet_visualisation_de_donnees/.idea/css/style.css" />
+</head>
+<body>
+<div class="container">
+    <header>
+        <h1>Parallel Coordinates — Teen Phone Addiction</h1>
+        <p class="subtitle">Exploration multidimensionnelle (échantillon automatique réduit)</p>
+    </header>
+
+    <section class="controls">
+        <div class="control-group">
+            <label for="purposeFilter">Usage principal (Phone_Usage_Purpose)</label>
+            <select id="purposeFilter">
+                <option value="all">Tous</option>
+            </select>
+        </div>
+
+        <div class="control-group">
+            <label for="ageFilter">Tranche d'âge</label>
+            <select id="ageFilter">
+                <option value="all">Tous</option>
+                <option value="13-15">13–15</option>
+                <option value="16-18">16–18</option>
+                <option value="19+">19+</option>
+            </select>
+        </div>
+
+        <div class="control-group">
+            <label for="addFilter">Niveau d'addiction</label>
+            <select id="addFilter">
+                <option value="all">Tous</option>
+                <option value="1-3">1–3</option>
+                <option value="4-6">4–6</option>
+                <option value="7-10">7–10</option>
+            </select>
+        </div>
+
+        <div class="control-group">
+            <label for="colorSelect">Colorer selon</label>
+            <select id="colorSelect">
+                <option value="none">Aucune</option>
+                <option value="Addiction_Level">Addiction_Level</option>
+                <option value="Academic_Performance">Academic_Performance</option>
+                <option value="Anxiety_Level">Anxiety_Level</option>
+                <option value="Depression_Level">Depression_Level</option>
+                <option value="Phone_Usage_Purpose">Phone_Usage_Purpose</option>
+            </select>
+        </div>
+
+        <div class="control-group" style="align-self:end">
+            <button id="resetBtn">Réinitialiser</button>
+        </div>
+    </section>
+
+    <div class="chart-container">
+        <div id="chart-scroll"><!-- svg injected here --></div>
+    </div>
+
+    <div class="legend" id="legend"></div>
+
+    <footer class="description">
+        <h3>Mode d'emploi</h3>
+        <ul>
+            <li>Échantillon : 5 % des données (automatique) — plus lisible.</li>
+            <li>Survolez une ligne pour voir nom et détails (focus total).</li>
+            <li>Brush : cliquer-glisser verticalement sur un axe pour filtrer ; combinez plusieurs brushes.</li>
+            <li>Choisir une variable dans "Colorer selon" applique une coloration ; si la variable est un axe, elle est retirée des axes.</li>
+        </ul>
+    </footer>
+</div>
+
+<div id="tooltip" class="tooltip" style="display:none;"></div>
+
+<script src="https://d3js.org/d3.v7.min.js"></script>
+<script src="../../../../../../../projet_visualisation_de_donnees/.idea/js/script.js"></script>
+</body>
+</html>
