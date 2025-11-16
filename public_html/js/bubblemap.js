@@ -153,9 +153,25 @@ async function main() {
     .text(d => d.Location.split(' ')[0]);
   
   //Ecoute du changement du radio button pour changer le mode de couleur
-  d3.selectAll('input[name="colorMode"]').on('change', () => {
-    colorMode = document.querySelector('input[name="colorMode"]:checked').value;
+  d3.selectAll('input[name="mode"]').on('change', () => {
+    colorMode = document.querySelector('input[name="mode"]:checked').value;
     updateBubbleColors();
+  });
+
+  const radios = document.querySelectorAll('input[name="mode"]');
+  const legendPerformance = document.getElementById('legend-performance');
+  const legendUsage = document.getElementById('legend-usage');
+
+  radios.forEach(radio => {
+      radio.addEventListener('change', () => {
+          if (radio.value === "performance") {
+              legendPerformance.classList.remove("hidden");
+              legendUsage.classList.add("hidden");
+          } else {
+              legendPerformance.classList.add("hidden");
+              legendUsage.classList.remove("hidden");
+          }
+      });
   });
 
   //Fonction de mise à jour des couleurs des bulles

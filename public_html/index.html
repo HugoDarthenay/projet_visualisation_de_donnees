@@ -13,38 +13,45 @@
     <div class="chart-card">
       <div class="map-container">
         <svg id="map" viewBox="0 0 860 560"></svg>
-
-      <div class="performance-legend">
-          <div><strong>Performance</strong></div>
-          <div class="gradient-bar"></div>
-          <div class="gradient-labels">
-              <span>72</span>
-              <span>73</span>
-              <span>74</span>
-              <span>75</span>
-              <span>76</span>
-              <span>77</span>
-              <span>78</span>
-          </div>
-      </div>
       </div>
       
       <div class="muted small">
         Bulles : taille = nombre d'élèves dans la ville. Couleur : moyenne des résultats scolaires.
       </div>
       <div id="loading" class="loading">Chargement des données...</div>
-      <div id="colorModeContainer">
-        <label class="radio-container">
-          <input type="radio" name="colorMode" value="performance" checked>
-          <span class="radio-custom"></span>
-          Performance
-      </label>
+      <div id="controls">
+        <div id="legend-performance" class="legend">
+            <div><strong>Performance</strong></div>
+            <div class="gradient-bar"></div>
+            <div class="gradient-labels">
+                <span>72</span>
+                <span>73</span>
+                <span>74</span>
+                <span>75</span>
+                <span>76</span>
+                <span>77</span>
+                <span>78</span>
+            </div>
+        </div>
+          <div id="legend-usage" class="legend hidden">
+              <h4>Usage</h4>
+              <div><span class="color-box" style="background: #6282ee;"></span> Éducation</div>
+              <div><span class="color-box" style="background: #ff7f50;"></span> Social Media</div>
+              <div><span class="color-box" style="background: #ffa600;"></span> Gaming</div>
+              <div><span class="color-box" style="background: #2a9d8f;"></span> Browsing</div>
+              <div><span class="color-box" style="background: #999999;"></span> Other</div>
+          </div>
 
-      <label class="radio-container">
-          <input type="radio" name="colorMode" value="usage">
-          <span class="radio-custom"></span>
-            Usage
-      </label>
+          <div id="radio-group">
+              <label>
+                  <input type="radio" name="mode" value="performance" checked>
+                  Performance
+              </label>
+              <label>
+                  <input type="radio" name="mode" value="usage">
+                  Usage dominant
+              </label>
+          </div>
       </div>
     </div>
 
