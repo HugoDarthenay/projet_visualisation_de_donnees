@@ -143,7 +143,7 @@ function createLegendAnxiete(){
                 .attr("class", "cercle_anxiete")
                 .attr("r", d)
                 .attr("cx", 0)
-                .attr("fill", "#ccccccff")
+                .attr("fill", "#ff7baeff")
                 .attr("stroke-width", 0.5);
 
             g.append("text")
@@ -206,7 +206,7 @@ function createScatterPlot(data){
                     .attr("cy", d => yScale(d.Daily_Usage_Hours))
                     .attr("r", 0)
                     .attr("fill-opacity", 0.8)
-                    .attr("fill", "#ccccccff") 
+                    .attr("fill", "#ff7baeff") 
                     .call(enter => enter.transition().duration(500)
                         .attr("r", d => point(d.Daily_Usage_Hours) * inPoint(d.Anxiety_Level)));
 
