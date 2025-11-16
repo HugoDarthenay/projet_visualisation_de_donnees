@@ -94,8 +94,8 @@ async function main() {
   // === Création des bulles ===
   const performance = d3.extent(cityData, d => d.avgPerformance);
   const echelleCouleur = d3.scaleLinear()
-    .domain([performance[0] || 50, performance[1] || 100])
-    .range(["#6282ee", "#e63946"]); //Dégradé de couleur personnalisé : BLEU -> ROUGE
+  .domain([performance[0] || 50, performance[1] || 100])
+  .range(["#e63946", "#6282ee"]); // ROUGE -> BLEU (corrigé: bleu = meilleure note)
 
   const rayon = d3.scaleSqrt()
     .domain(d3.extent(cityData.map(d => d.count)))

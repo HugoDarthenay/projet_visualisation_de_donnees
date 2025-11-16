@@ -36,9 +36,10 @@ input[type="radio"] {
   max-width: 70%;
 }
 
-circle{
+circle {
   opacity: 0.6;
   border-style: none;
+  transition: transform 0.25s ease-out; /* ← effet progressif */
 }
 
 circle:hover {
@@ -57,6 +58,37 @@ text{
 #map {
   width: 100%;
   height: 560px;
+  position: relative; /* ← obligatoire pour positionner la légende */
+}
+
+/* --- Légende du dégradé de performance --- */
+.performance-legend {
+  position: absolute;
+  bottom: 10px;
+  left: 20px;
+  padding: 8px 12px;
+  background: white;
+  border-radius: 6px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+  font-size: 12px;
+}
+
+.gradient-bar {
+  width: 140px;
+  height: 14px;
+  background: linear-gradient(to right, #e63946, #6282ee);
+  border-radius: 5px;
+  margin-bottom: 6px;
+}
+
+.gradient-labels {
+  display: flex;
+  justify-content: space-between;
+  font-size: 11px;
+}
+
+.label-radio {
+  display: block;
 }
 
 #pieChart {
