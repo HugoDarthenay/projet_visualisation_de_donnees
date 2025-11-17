@@ -1,0 +1,22 @@
+.navigation{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 50%;
+    justify-content: space-around;
+    margin-left: 25%;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    padding: 1%;
+    margin-bottom: 2%;
+}
+.navigation a{
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    font-size: 1.5vw;
+}
+.navigation a:hover{
+    color: rgb(171, 171, 171);
+    transition: 0.3s;
+    opacity: 0.8;
+}

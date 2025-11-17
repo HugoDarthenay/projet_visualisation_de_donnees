@@ -8,6 +8,16 @@
     <link rel="stylesheet" href="./css/scatterPlot.css">
 </head>
 <body>
+    
+<div id="navbar"></div>
+<script>
+  fetch("navbar.html")
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById("navbar").innerHTML = data;
+    });
+</script>
+
     <h1>Scatter plot</h1>
     
     <div class="filtres">

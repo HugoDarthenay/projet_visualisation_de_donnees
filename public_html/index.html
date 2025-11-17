@@ -7,6 +7,16 @@
   <link rel="stylesheet" href="css/bubblemap.css">
 </head>
 <body>
+
+<div id="navbar"></div>
+<script>
+  fetch("navbar.html")
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById("navbar").innerHTML = data;
+    });
+</script>
+
   <h1>Carte à bulles mondiale — Sélectionnez une ville pour voir la répartition des usages</h1>
   
   <div class="container">
