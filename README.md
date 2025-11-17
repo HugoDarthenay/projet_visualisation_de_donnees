@@ -10,10 +10,15 @@ Cela influe directement sur notre travail de restitution qui se doit de partager
 
 Nous avons identifié plusieurs types de tâches en rapport avec notre user target. Le clustering, le tri, la corrélation, l’association et la comparaison. Ces tâches permettent de trouver un objectif à nos visualisations et dirigent nos décisions en ce qui concerne les types de visualisations à choisir ainsi que les interactions qui y seront proposées.
 
-
 ## BubbleMap
+Une carte du monde où les adolescents sont regroupés en bulles, chaque bulle est ensuite placée sur la carte selon l’emplacement de sa ville respective. La taille de la bulle correspond au nombre d’adolescents de la ville. La couleur de la bulle correspond à leur moyenne de notes : plus la couleur s’approche du bleu, plus les moyennes sont bonnes, et à l’inverse, plus la bulle s’approche du rouge, plus les notes sont basses.
+L’utilisateur a la possibilité de cliquer sur une bulle pour y voir un camembert répertoriant les différents usages et leurs proportions respectives en temps d’écran des adolescents de la ville.
 
-
+Tâches :
+- Clustering : regroupement des élèves en fonction de leur localisation (ville d’habitation).
+- Comparaison des clusters en fonction du nombre d’élèves (tailles des bulles) et de leur note moyenne (couleurs des bulles).
+- Tri des différents usages par cluster via le camembert.
+- Association des moyennes de notes, du temps de sommeil et des usages lorsque l’on sélectionne une bulle.
 
 ## ScatterPlot 
 
