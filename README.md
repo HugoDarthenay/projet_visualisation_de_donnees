@@ -51,3 +51,29 @@ La visualisation en scatter plot a été pensée pour répondre à un nombre dé
 
 Via ces informations, nous sommes capables de comparer les performances académiques de chaque personne en fonction de plusieurs critères dont la classe, l’activité principale, le temps d’écran ou même le niveau d’anxiété. 
 Le but étant de visualiser les tendances chez les groupes d’élèves en fonction de critères qui pourront varier comme le temps d’écran par exemple.
+
+##Parallel Coordinates Plot (PCP)
+
+Le Parallel Coordinates Plot permet de visualiser simultanément plusieurs attributs caractérisant l’usage des écrans et ses impacts.
+Pour des raisons de lisibilité, nous n’utilisons qu’un échantillon réduit (≈5%) choisi aléatoirement tout en conservant la diversité des profils.
+
+Les données retenues pour cette visualisation sont :
+* Purpose
+* Daily Usage
+* Application Used
+* Time on Education
+* Academic Performance
+* School Grade
+* Anxiety
+* Addiction Level
+
+Grâce à ce graphique et aux interactions disponibles (filtrage, coloration, survol, brushing), nous pouvons répondre à un ensemble de tâches UX nécessaires pour les équipes pédagogiques :
+* Comparer les profils d’élèves via plusieurs attributs simultanément
+* Corréler le temps d’écran, l’anxiété, l’addiction et la performance académique
+* Trier les élèves selon leur activité principale ou leur âge
+* Identifier un élève précis via le survol d’une ligne (tooltip avec nom + valeurs)
+* Repérer des profils atypiques ou extrêmes (Daily Usage, Anxiety, Addiction Level…)
+
+Le PCP permet aux équipes pédagogiques d’observer en un coup d’œil les tendances générales, les relations multivariées entre comportements numériques et performances, les écarts entre groupes d’élèves en fonction de leurs pratiques et les profils particuliers qui mériteraient une attention spécifique, offrant ainsi une analyse complète et complémentaire aux autres visualisations du projet.
+
+
