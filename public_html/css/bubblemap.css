@@ -34,7 +34,7 @@ h1 {
 }
 
 circle {
-  opacity: 0.6;
+  opacity: 0.7;
   border-style: none;
   transition: transform 0.25s ease-out; /* ← effet progressif */
 }
