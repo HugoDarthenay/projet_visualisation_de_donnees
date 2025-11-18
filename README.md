@@ -52,7 +52,7 @@ La visualisation en scatter plot a été pensée pour répondre à un nombre dé
 Via ces informations, nous sommes capables de comparer les performances académiques de chaque personne en fonction de plusieurs critères dont la classe, l’activité principale, le temps d’écran ou même le niveau d’anxiété. 
 Le but étant de visualiser les tendances chez les groupes d’élèves en fonction de critères qui pourront varier comme le temps d’écran par exemple.
 
-##Parallel Coordinates Plot (PCP)
+## Parallel Coordinates Plot (PCP)
 
 Le Parallel Coordinates Plot permet de visualiser simultanément plusieurs attributs caractérisant l’usage des écrans et ses impacts.
 Pour des raisons de lisibilité, nous n’utilisons qu’un échantillon réduit (≈5%) choisi aléatoirement tout en conservant la diversité des profils.
