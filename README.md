@@ -58,6 +58,7 @@ Le Parallel Coordinates Plot permet de visualiser simultanément plusieurs attri
 Pour des raisons de lisibilité, nous n’utilisons qu’un échantillon réduit (≈5%) choisi aléatoirement tout en conservant la diversité des profils.
 
 Les données retenues pour cette visualisation sont :
+```markdown
 * Purpose
 * Daily Usage
 * Application Used
@@ -66,14 +67,16 @@ Les données retenues pour cette visualisation sont :
 * School Grade
 * Anxiety
 * Addiction Level
-
+```
 Grâce à ce graphique et aux interactions disponibles (filtrage, coloration, survol, brushing), nous pouvons répondre à un ensemble de tâches UX nécessaires pour les équipes pédagogiques :
+```markdown
+
 * Comparer les profils d’élèves via plusieurs attributs simultanément
 * Corréler le temps d’écran, l’anxiété, l’addiction et la performance académique
 * Trier les élèves selon leur activité principale ou leur âge
 * Identifier un élève précis via le survol d’une ligne (tooltip avec nom + valeurs)
 * Repérer des profils atypiques ou extrêmes (Daily Usage, Anxiety, Addiction Level…)
-
+```
 Le PCP permet aux équipes pédagogiques d’observer en un coup d’œil les tendances générales, les relations multivariées entre comportements numériques et performances, les écarts entre groupes d’élèves en fonction de leurs pratiques et les profils particuliers qui mériteraient une attention spécifique, offrant ainsi une analyse complète et complémentaire aux autres visualisations du projet.
 
 
