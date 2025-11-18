@@ -95,7 +95,7 @@ async function main() {
   const performance = d3.extent(cityData, d => d.avgPerformance);
   const echelleCouleur = d3.scaleLinear()
   .domain([performance[0] || 50, performance[1] || 100])
-  .range(["#e63946", "#6282ee"]); // ROUGE -> BLEU (corrigé: bleu = meilleure note)
+  .range(["#e63946", "#6282ee"]); // ROUGE -> BLEU
 
   const rayon = d3.scaleSqrt()
     .domain(d3.extent(cityData.map(d => d.count)))

@@ -20,6 +20,13 @@ Tâches :
 - Tri des différents usages par cluster via le camembert.
 - Association des moyennes de notes, du temps de sommeil et des usages lorsque l’on sélectionne une bulle.
 
+```markdonw
+* Localisation
+* Sleep_hours
+* Academic_Performance
+* Phone_Usage_Purpose
+```
+
 ## ScatterPlot 
 
 Pour répondre aux tâches de clustering, de comparaison et de tri, le scatter plot est un moyen de visualisation que nous avons jugé optimal. Il possède une lecture accessible et permet l’ajout d’interactions qui répondent à nos tâches.
