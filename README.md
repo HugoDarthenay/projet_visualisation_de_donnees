@@ -14,11 +14,13 @@ Nous avons identifié plusieurs types de tâches en rapport avec notre user targ
 Une carte du monde où les adolescents sont regroupés en bulles, chaque bulle est ensuite placée sur la carte selon l’emplacement de sa ville respective. La taille de la bulle correspond au nombre d’adolescents de la ville. La couleur de la bulle correspond à leur moyenne de notes : plus la couleur s’approche du bleu, plus les moyennes sont bonnes, et à l’inverse, plus la bulle s’approche du rouge, plus les notes sont basses.
 L’utilisateur a la possibilité de cliquer sur une bulle pour y voir un camembert répertoriant les différents usages et leurs proportions respectives en temps d’écran des adolescents de la ville.
 
-Tâches :
-- Clustering : regroupement des élèves en fonction de leur localisation (ville d’habitation).
-- Comparaison des clusters en fonction du nombre d’élèves (tailles des bulles) et de leur note moyenne (couleurs des bulles).
-- Tri des différents usages par cluster via le camembert.
-- Association des moyennes de notes, du temps de sommeil et des usages lorsque l’on sélectionne une bulle.
+Les tâches rattachées à cette visualisation sont :
+```markdown
+* Clustering : regroupement des élèves en fonction de leur localisation (ville d’habitation).
+* Comparaison des clusters en fonction du nombre d’élèves (tailles des bulles) et de leur note moyenne (couleurs des bulles).
+* Tri des différents usages par cluster via le camembert.
+* Association des moyennes de notes, du temps de sommeil et des usages lorsque l’on sélectionne une bulle.
+```
 
 ## ScatterPlot 
 
@@ -35,6 +37,16 @@ Les données utilisées pour alimenter ce graphique sont les suivantes :
 * School grade
 * Anxiety
 * Addiction level
+```
+La visualisation en scatter plot a été pensée pour répondre à un nombre définis de tâches qui sont les suivantes : 
+
+```markdown
+* Comparer les notes entre les groupes d'élèves disponibles
+* Correler les résultats académiques et le temps d'écran individuel
+* Correler les résultats académiques et le niveau d'anxiété
+* Trier les personnes par activités principales
+* Trier les personnes par groupes de classe
+* Associer les activités principales et les résultats académiques
 ```
 
 Via ces informations, nous sommes capables de comparer les performances académiques de chaque personne en fonction de plusieurs critères dont la classe, l’activité principale, le temps d’écran ou même le niveau d’anxiété. 
