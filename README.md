@@ -38,6 +38,7 @@ Notre jeu de données est composé de plusieurs colonnes en rapport avec les act
 Cela influe directement sur notre travail de restitution qui se doit de partager un message clair. Pour cette raison, notre pipeline prendra en compte un nombre défini de données qui répond à des besoins que nous allons recenser dans ce document.
 
 Nous avons identifié plusieurs types de tâches en rapport avec notre user target. Le clustering, le tri, la corrélation, l’association et la comparaison. Ces tâches permettent de trouver un objectif à nos visualisations et dirigent nos décisions en ce qui concerne les types de visualisations à choisir ainsi que les interactions qui y seront proposées.
+Pour des raisons de lisibilité, nous n’utilisons qu’un échantillon réduit (≈5%) choisi aléatoirement tout en conservant la diversité des profils.
 
 ## BubbleMap
 Une carte du monde où les adolescents sont regroupés en bulles, chaque bulle est ensuite placée sur la carte selon l’emplacement de sa ville respective. La taille de la bulle correspond au nombre d’adolescents de la ville. La couleur de la bulle correspond à leur moyenne de notes : plus la couleur s’approche du bleu, plus les moyennes sont bonnes, et à l’inverse, plus la bulle s’approche du rouge, plus les notes sont basses.
@@ -54,6 +55,7 @@ Les tâches rattachées à cette visualisation sont :
 ## ScatterPlot 
 
 Pour répondre aux tâches de clustering, de comparaison et de tri, le scatter plot est un moyen de visualisation que nous avons jugé optimal. Il possède une lecture accessible et permet l’ajout d’interactions qui répondent à nos tâches.
+Pour la lisi
 Les données utilisées pour alimenter ce graphique sont les suivantes : 
 
 | Nom de la colonne | Description | Type de donnée | Notes |
@@ -89,8 +91,6 @@ Le but étant de visualiser les tendances chez les groupes d’élèves en fonct
 ## Parallel Coordinates Plot (PCP)
 
 Le Parallel Coordinates Plot permet de visualiser simultanément plusieurs attributs caractérisant l’usage des écrans et ses impacts.
-Pour des raisons de lisibilité, nous n’utilisons qu’un échantillon réduit (≈5%) choisi aléatoirement tout en conservant la diversité des profils.
-
 Les données retenues pour cette visualisation sont :
 
 | Nom de la colonne | Description | Type de donnée | Notes |
