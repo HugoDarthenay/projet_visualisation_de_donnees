@@ -5,6 +5,7 @@ Le corps médical pourrait avoir besoin de s’appuyer sur des visualisations de
 Dans notre cas, nous nous pencherons sur les besoins des équipes pédagogiques (éducation) qui pourraient faire appel à la visualisation de données afin d’analyser les comportements, définir les profils et bien d’autres.
 # Dataset
 
+| Nom de la colonne | Description | Type de donnée | Notes |
 | :--- | :--- | :--- | :--- |
 | **ID** | Identifiant unique pour chaque participant. | Entier | |
 | **Name** | Nom du participant (anonymisé). | Texte | |
@@ -55,6 +56,7 @@ Les tâches rattachées à cette visualisation sont :
 Pour répondre aux tâches de clustering, de comparaison et de tri, le scatter plot est un moyen de visualisation que nous avons jugé optimal. Il possède une lecture accessible et permet l’ajout d’interactions qui répondent à nos tâches.
 Les données utilisées pour alimenter ce graphique sont les suivantes : 
 
+| Nom de la colonne | Description | Type de donnée | Notes |
 | :--- | :--- | :--- | :--- |
 | **Name** | Nom du participant (anonymisé). | Texte | |
 | **School\_Grade** | Niveau scolaire du participant. | Catégorique | |
@@ -91,6 +93,7 @@ Pour des raisons de lisibilité, nous n’utilisons qu’un échantillon réduit
 
 Les données retenues pour cette visualisation sont :
 
+| Nom de la colonne | Description | Type de donnée | Notes |
 | :--- | :--- | :--- | :--- |
 | **School\_Grade** | Niveau scolaire du participant. | Catégorique | |
 | **Daily\_Usage\_Hours** | Nombre total d'heures d'utilisation du téléphone par jour. | Flottant | En heures. |
