@@ -1,7 +1,6 @@
-// script.js - corrected: age filter reinstated, purpose filter, brushes fixed, colors fixed, axis labels shown
 const CSV_FILE = "data/data.csv";
 
-// dims used in axes (Age intentionally excluded from axes but still filterable)
+//  axes
 const ALL_DIMS = [
     "Sleep_Hours",
     "Screen_Time_Before_Bed",
@@ -37,10 +36,10 @@ let fullData = [];
 let displayData = [];
 let dims = ALL_DIMS.slice(); // dims currently shown as axes
 
-// brushes state
+// brushes
 const activeBrushes = new Map();
 
-// helper: parse numbers safe
+
 function toNum(v){ const n = +v; return isNaN(n) ? null : n; }
 
 // load CSV
@@ -56,7 +55,7 @@ d3.csv(CSV_FILE).then(raw => {
         return out;
     });
 
-    // populate purpose dropdown
+
     const purposes = Array.from(new Set(fullData.map(d => d.Phone_Usage_Purpose).filter(Boolean))).sort();
     purposes.forEach(p => {
         const opt = document.createElement("option");
@@ -71,9 +70,9 @@ d3.csv(CSV_FILE).then(raw => {
     d3.select("#chart-scroll").append("div").text("Erreur chargement CSV : " + err.message);
 });
 
-// initialize plotting (sample 5%)
+// sample 5%
 function initPlot() {
-    const pct = 0.02;
+    const pct = 0.05;
     const n = Math.max(5, Math.floor(fullData.length * pct));
     displayData = d3.shuffle(fullData.slice()).slice(0, n);
 
@@ -202,7 +201,7 @@ function onBrush(event, dim){
     applyBrushFiltering();
 }
 
-// apply brushes + UI filters: hide lines that do not match (display:none via class)
+// apply brushes + UI filters
 function applyBrushFiltering(){
     const purposeVal = purposeFilter.value;
     const ageVal = ageFilter.value;
@@ -242,7 +241,7 @@ function applyBrushFiltering(){
     });
 }
 
-// called after mouseout to reapply filters state
+
 function refreshVisibilityFromFilters(){ applyBrushFiltering(); }
 
 // tooltip
@@ -336,4 +335,28 @@ function updateLegend(colorAttr){
         item.append("div").attr("class","legend-color").style("background", scale(v));
         item.append("div").text(Math.round(v*100)/100);
     });
+}
+function showTooltip(event, d) {
+    tooltip.html(`
+        <strong>${d.Name || "N/A"}</strong><br/>
+        Addiction: ${d.Addiction_Level ?? "n/a"}<br/>
+        Daily usage: ${d.Daily_Usage_Hours ?? "n/a"} h<br/>
+        Performance: ${d.Academic_Performance ?? "n/a"}
+    `)
+        .style("display", "block");
+
+    moveTooltip(event);
+}
+
+function moveTooltip(event) {
+    // récupère le conteneur du PCP (scroll)
+    const container = document.getElementById("chart-scroll");
+    const rect = container.getBoundingClientRect();
+
+    tooltip.style("left", (event.clientX - rect.left + 12) + "px")
+        .style("top",  (event.clientY - rect.top  + 12) + "px");
+}
+
+function hideTooltip() {
+    tooltip.style("display", "none");
 }
