@@ -4,11 +4,7 @@ La variété des données de notre base offre une analyse qui semble pertinente 
 Le corps médical pourrait avoir besoin de s’appuyer sur des visualisations de données dans le cadre de détection de cas atypiques et de patterns spécifiques chez les jeunes. L’entourage (famille) pourrait s’en servir pour un travail de comparaison entre l’échantillon étudié et leur cas personnel.
 Dans notre cas, nous nous pencherons sur les besoins des équipes pédagogiques (éducation) qui pourraient faire appel à la visualisation de données afin d’analyser les comportements, définir les profils et bien d’autres.
 # Dataset
-## 📱 Dictionnaire de Données Complet - Teen Phone Addiction
 
-Ce tableau décrit les **25 variables (colonnes)** présentes dans le fichier `teen_phone_addiction_dataset.csv`.
-
-| Nom de la colonne | Description | Type de donnée | Notes |
 | :--- | :--- | :--- | :--- |
 | **ID** | Identifiant unique pour chaque participant. | Entier | |
 | **Name** | Nom du participant (anonymisé). | Texte | |
@@ -59,17 +55,21 @@ Les tâches rattachées à cette visualisation sont :
 Pour répondre aux tâches de clustering, de comparaison et de tri, le scatter plot est un moyen de visualisation que nous avons jugé optimal. Il possède une lecture accessible et permet l’ajout d’interactions qui répondent à nos tâches.
 Les données utilisées pour alimenter ce graphique sont les suivantes : 
 
-```markdown
-* Purpose 
-* Daily Usage
-* Application Used
-* Names
-* Time on education
-* Academic performance
-* School grade
-* Anxiety
-* Addiction level
-```
+| :--- | :--- | :--- | :--- |
+| **Name** | Nom du participant (anonymisé). | Texte | |
+| **School\_Grade** | Niveau scolaire du participant. | Catégorique | |
+| **Daily\_Usage\_Hours** | Nombre total d'heures d'utilisation du téléphone par jour. | Flottant | En heures. |
+| **Sleep\_Hours** | Nombre d'heures de sommeil par nuit. | Flottant | En heures. |
+| **Anxiety\_Level** | Niveau d'anxiété ressenti. | Entier | Échelle de 1 (faible) à 10 (élevé). |
+| **Apps\_Used\_Daily** | Nombre d'applications utilisées quotidiennement. | Entier | |
+| **Time\_on\_Social\_Media** | Temps passé sur les médias sociaux. | Flottant | En heures. |
+| **Time\_on\_Gaming** | Temps passé à jouer. | Flottant | En heures. |
+| **Time\_on\_Education** | Temps passé à étudier/apprendre sur le téléphone. | Flottant | En heures. |
+| **Phone\_Usage\_Purpose** | But principal de l'utilisation (e.g., *Browsing*, *Social Media*, *Education*). | Catégorique | |
+| **Family\_Communication** | Niveau/Fréquence de communication avec la famille. | Entier | Échelle. |
+| **Weekend\_Usage\_Hours** | Heures d'utilisation pendant le week-end. | Flottant | En heures. |
+
+
 La visualisation en scatter plot a été pensée pour répondre à un nombre définis de tâches qui sont les suivantes : 
 
 ```markdown
@@ -90,16 +90,17 @@ Le Parallel Coordinates Plot permet de visualiser simultanément plusieurs attri
 Pour des raisons de lisibilité, nous n’utilisons qu’un échantillon réduit (≈5%) choisi aléatoirement tout en conservant la diversité des profils.
 
 Les données retenues pour cette visualisation sont :
-```markdown
-* Purpose
-* Daily Usage
-* Application Used
-* Time on Education
-* Academic Performance
-* School Grade
-* Anxiety
-* Addiction Level
-```
+
+| :--- | :--- | :--- | :--- |
+| **School\_Grade** | Niveau scolaire du participant. | Catégorique | |
+| **Daily\_Usage\_Hours** | Nombre total d'heures d'utilisation du téléphone par jour. | Flottant | En heures. |
+| **Academic\_Performance** | Score/Pourcentage de performance académique. | Entier | |
+| **Anxiety\_Level** | Niveau d'anxiété ressenti. | Entier | Échelle de 1 (faible) à 10 (élevé). |
+| **Apps\_Used\_Daily** | Nombre d'applications utilisées quotidiennement. | Entier | |
+| **Time\_on\_Education** | Temps passé à étudier/apprendre sur le téléphone. | Flottant | En heures. |
+| **Phone\_Usage\_Purpose** | But principal de l'utilisation (e.g., *Browsing*, *Social Media*, *Education*). | Catégorique | |
+| **Addiction\_Level** | **Niveau d'addiction au téléphone.** | Flottant | La variable cible. |
+
 Grâce à ce graphique et aux interactions disponibles (filtrage, coloration, survol, brushing), nous pouvons répondre à un ensemble de tâches UX nécessaires pour les équipes pédagogiques :
 ```markdown
 
