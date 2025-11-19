@@ -150,7 +150,6 @@ async function main() {
     .attr('dy', '.35em')
     .style('font-size', '10px')
     .style('pointer-events', 'none')
-    .text(d => d.Location.split(' ')[0]);
   
   //Ecoute du changement du radio button pour changer le mode de couleur
   d3.selectAll('input[name="mode"]').on('change', () => {
