@@ -44,6 +44,14 @@ Pour des raisons de lisibilité, nous n’utilisons qu’un échantillon réduit
 Une carte du monde où les adolescents sont regroupés en bulles, chaque bulle est ensuite placée sur la carte selon l’emplacement de sa ville respective. La taille de la bulle correspond au nombre d’adolescents de la ville. La couleur de la bulle correspond à leur moyenne de notes : plus la couleur s’approche du bleu, plus les moyennes sont bonnes, et à l’inverse, plus la bulle s’approche du rouge, plus les notes sont basses.
 L’utilisateur a la possibilité de cliquer sur une bulle pour y voir un camembert répertoriant les différents usages et leurs proportions respectives en temps d’écran des adolescents de la ville.
 
+| Nom de la colonne | Description | Type de donnée | Notes |
+| :--- | :--- | :--- | :--- |
+| **Location** | Localisation du participant. | Texte | |
+| **Sleep\_Hours** | Nombre d'heures de sommeil par nuit. | Flottant | En heures. |
+| **Academic\_Performance** | Score/Pourcentage de performance académique. | Entier | |
+| **Phone\_Usage\_Purpose** | But principal de l'utilisation (e.g., *Browsing*, *Social Media*, *Education*). | Catégorique | |
+
+
 Les tâches rattachées à cette visualisation sont :
 ```markdown
 * Clustering : regroupement des élèves en fonction de leur localisation (ville d’habitation).
@@ -51,7 +59,6 @@ Les tâches rattachées à cette visualisation sont :
 * Tri des différents usages par cluster via le camembert.
 * Association des moyennes de notes, du temps de sommeil et des usages lorsque l’on sélectionne une bulle.
 ```
-
 ## ScatterPlot 
 
 Pour répondre aux tâches de clustering, de comparaison et de tri, le scatter plot est un moyen de visualisation que nous avons jugé optimal. Il possède une lecture accessible et permet l’ajout d’interactions qui répondent à nos tâches.
