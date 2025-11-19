@@ -3,6 +3,38 @@
 La variété des données de notre base offre une analyse qui semble pertinente pour plusieurs acteurs en lien avec notre sujet d’étude. Nous en avons distingué plusieurs pour lesquels une visualisation des données peut s’avérer nécessaire. 
 Le corps médical pourrait avoir besoin de s’appuyer sur des visualisations de données dans le cadre de détection de cas atypiques et de patterns spécifiques chez les jeunes. L’entourage (famille) pourrait s’en servir pour un travail de comparaison entre l’échantillon étudié et leur cas personnel.
 Dans notre cas, nous nous pencherons sur les besoins des équipes pédagogiques (éducation) qui pourraient faire appel à la visualisation de données afin d’analyser les comportements, définir les profils et bien d’autres.
+# Dataset
+## 📱 Dictionnaire de Données Complet - Teen Phone Addiction
+
+Ce tableau décrit les **25 variables (colonnes)** présentes dans le fichier `teen_phone_addiction_dataset.csv`.
+
+| Nom de la colonne | Description | Type de donnée | Notes |
+| :--- | :--- | :--- | :--- |
+| **ID** | Identifiant unique pour chaque participant. | Entier | |
+| **Name** | Nom du participant (anonymisé). | Texte | |
+| **Age** | Âge du participant. | Entier | |
+| **Gender** | Sexe/Genre du participant. | Catégorique | |
+| **Location** | Localisation du participant. | Texte | |
+| **School\_Grade** | Niveau scolaire du participant. | Catégorique | |
+| **Daily\_Usage\_Hours** | Nombre total d'heures d'utilisation du téléphone par jour. | Flottant | En heures. |
+| **Sleep\_Hours** | Nombre d'heures de sommeil par nuit. | Flottant | En heures. |
+| **Academic\_Performance** | Score/Pourcentage de performance académique. | Entier | |
+| **Social\_Interactions** | Nombre d'interactions sociales en personne par jour/semaine. | Entier | |
+| **Exercise\_Hours** | Nombre d'heures d'activité physique par semaine. | Flottant | En heures. |
+| **Anxiety\_Level** | Niveau d'anxiété ressenti. | Entier | Échelle de 1 (faible) à 10 (élevé). |
+| **Depression\_Level** | Niveau de dépression ressenti. | Entier | Échelle de 1 (faible) à 10 (élevé). |
+| **Self\_Esteem** | Niveau d'estime de soi. | Entier | Échelle de 1 (faible) à 10 (élevé). |
+| **Parental\_Control** | Présence ou niveau de contrôle parental. | Entier | Binaire (0 ou 1) ou Échelle. |
+| **Screen\_Time\_Before\_Bed** | Temps passé sur l'écran juste avant de dormir. | Flottant | En heures. |
+| **Phone\_Checks\_Per\_Day** | Nombre de fois où le téléphone est vérifié par jour. | Entier | |
+| **Apps\_Used\_Daily** | Nombre d'applications utilisées quotidiennement. | Entier | |
+| **Time\_on\_Social\_Media** | Temps passé sur les médias sociaux. | Flottant | En heures. |
+| **Time\_on\_Gaming** | Temps passé à jouer. | Flottant | En heures. |
+| **Time\_on\_Education** | Temps passé à étudier/apprendre sur le téléphone. | Flottant | En heures. |
+| **Phone\_Usage\_Purpose** | But principal de l'utilisation (e.g., *Browsing*, *Social Media*, *Education*). | Catégorique | |
+| **Family\_Communication** | Niveau/Fréquence de communication avec la famille. | Entier | Échelle. |
+| **Weekend\_Usage\_Hours** | Heures d'utilisation pendant le week-end. | Flottant | En heures. |
+| **Addiction\_Level** | **Niveau d'addiction au téléphone.** | Flottant | La variable cible. |
 
 # Pipeline
 Notre jeu de données est composé de plusieurs colonnes en rapport avec les activités des adolescents sur les écrans et leur impact. Les sources d’informations sont assez variées. Certaines informations proviennent d’un ressenti personnel, d'autres sont des informations objectives et certaines sont quantifiables tandis que d’autres ne le sont pas.

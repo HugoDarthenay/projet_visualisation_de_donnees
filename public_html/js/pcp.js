@@ -104,6 +104,32 @@ function initPlot() {
     updateLegend();
 }
 
+function showTooltip(event, d) {
+    tooltip.html(`
+<strong>${d.Name || "N/A"}</strong><br/>
+        Addiction: ${d.Addiction_Level ?? "n/a"}<br/>
+        Daily usage: ${d.Daily_Usage_Hours ?? "n/a"} h<br/>
+        Performance: ${d.Academic_Performance ?? "n/a"}
+    `)
+    .style("display", "block");
+ 
+    moveTooltip(event); // positionne correctement dès le début
+}
+ 
+function moveTooltip(event) {
+    // récupère le conteneur du PCP (scroll)
+    const container = document.getElementById("chart-scroll");
+    const rect = container.getBoundingClientRect();
+ 
+    tooltip.style("left", (event.clientX - rect.left + 12) + "px")
+           .style("top",  (event.clientY - rect.top  + 12) + "px");
+}
+ 
+function hideTooltip() {
+    tooltip.style("display", "none");
+}
+
+
 // draw everything
 function drawPlot() {
     innerG.selectAll("*").remove();
